@@ -6,6 +6,10 @@
   --blue: #008dd5;
 }
 
+body {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 html,
 input {
   background-color: var(--silver);
