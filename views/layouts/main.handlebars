@@ -1,12 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes</title>
-</head>
-<body>
-  {{{body}}}
-</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&display=swap'
+      rel='stylesheet'
+    />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+      integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+      crossorigin='anonymous'
+      referrerpolicy='no-referrer'
+    />
+    <link rel='stylesheet' href='/css/reset.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>Notes</title>
+  </head>
+  <body>
+    <header class='main-header-container full-bleed'>
+
+      <nav class='navbar'>
+        <div class='main-logo'>
+          <h1 class='logo'><a href='/'>Note App</a></h1>
+        </div>
+        <ul class='nav-menu'>
+          <li class='nav-item'><a href='/' class='nav-link'>Home</a></li>
+          <li class='nav-item'><a
+              href='/dashboard'
+              class='nav-link'
+            >Dashboard</a></li>
+          <li class='nav-item'><a href='/signup' class='nav-link'>Sign up</a></li>
+          <li class='nav-item'><a href='/login' class='nav-link'>Login</a></li>
+          <li class='nav-item'><a href='/' class='nav-link'>Logout</a></li>
+        </ul>
+        <div class='hamburger'>
+          <span class='bar'></span>
+          <span class='bar'></span>
+          <span class='bar'></span>
+        </div>
+      </nav>
+    </header>
+    {{{body}}}
+
+    <script src='/js/navbar.js'></script>
+  </body>
 </html>
