@@ -9,6 +9,9 @@ require ("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 
+// initializes the session store
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // setting up express middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,7 +24,10 @@ const sess = {
   secret: process.env.SC_KEY,
   cookie: {},
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
 };
 
 app.use(session(sess));
