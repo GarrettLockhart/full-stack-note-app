@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const Note = require('./Note.js');
+const Post = require('./Post.js');
 const sequelize = require('../config/connection.js');
 const bcrypt = require('bcrypt');
 
@@ -40,10 +40,10 @@ User.init(
         len: [6]
       }
     },
-    saved_notes: {
+    user_posts: {
       type: DataTypes.INTEGER,
       references: {
-        model: Note,
+        model: Post,
         key: 'id'
       }
     }

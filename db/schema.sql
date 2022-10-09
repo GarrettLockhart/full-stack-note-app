@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS fullstacknotes_db;
-CREATE DATABASE fullstacknotes_db;
+DROP DATABASE IF EXISTS techblog_db;
+CREATE DATABASE techblog_db;

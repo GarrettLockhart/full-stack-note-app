@@ -2,9 +2,9 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 const User = require('./User.js');
 const sequelize = require('../config/connection.js');
 
-class Note extends Model {}
+class Post extends Model {}
 
-Note.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,16 +16,16 @@ Note.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    description: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false
     }
   },
   {
     sequelize,
-    timestamps: false,
-    model: 'Note'
+    timestamps: true,
+    model: 'Post'
   }
 );
 
-module.exports = Note;
+module.exports = Post;
