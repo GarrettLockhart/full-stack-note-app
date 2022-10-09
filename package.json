@@ -1,5 +1,5 @@
 {
-  "name": "full-stack-note-app",
+  "name": "full-stack-tech-blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GarrettLockhart/full-stack-note-app.git"
+    "url": "git+https://github.com/GarrettLockhart/full-stack-tech-blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GarrettLockhart/full-stack-note-app/issues"
+    "url": "https://github.com/GarrettLockhart/full-stack-tech-blog/issues"
   },
-  "homepage": "https://github.com/GarrettLockhart/full-stack-note-app#readme",
+  "homepage": "https://github.com/GarrettLockhart/full-stack-tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.5",
