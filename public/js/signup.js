@@ -20,10 +20,26 @@ const signupFormHandler = async (event) => {
       headers: { 'Content-type': 'application/json' }
     });
     if (response.ok) {
-      window.location.replace('/dashboard');
+      const loginResponse = await fetch('/api/user/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-type': 'application/json' }
+      });
+
+      if (!loginResponse.ok) {
+        const warning = document.querySelector('#warning');
+        warning.textContent = 'Failed to log in.';
+
+        // will remove error message after 2 seconds
+        setTimeout(() => {
+          document.querySelector('#warning').textContent = '';
+        }, 2000);
+      } else {
+        window.location.replace('/dashboard');
+      }
     } else {
       const warning = document.querySelector('#warning');
-      warning.textContent = 'Failed to log in.'
+      warning.textContent = 'Failed to log in.';
 
       // will remove error message after 2 seconds
       setTimeout(() => {
@@ -32,7 +48,7 @@ const signupFormHandler = async (event) => {
     }
   } else {
     const warning = document.querySelector('#warning');
-    warning.textContent = 'Please enter all fields.'
+    warning.textContent = 'Please enter all fields.';
 
     setTimeout(() => {
       document.querySelector('#warning').textContent = '';

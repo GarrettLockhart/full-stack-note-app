@@ -1,3 +1,5 @@
+const btn = document.querySelector('.btn');
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -10,9 +12,8 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-type': 'application/json' }
     });
-    if (response.ok) {
-      window.location.replace('/dashboard');
-    } else {
+    window.location.replace('/dashboard');
+    if (!response.ok) {
       const warning = document.querySelector('#warning');
       warning.textContent = 'Failed to log in.';
 
@@ -31,4 +32,4 @@ const loginFormHandler = async (event) => {
   }
 };
 
-document.querySelector('#login').addEventListener('click', loginFormHandler);
+btn.addEventListener('click', loginFormHandler);
