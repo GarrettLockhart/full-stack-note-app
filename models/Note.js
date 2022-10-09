@@ -1,19 +1,20 @@
-const { Models, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const User = require('./User.js');
 const sequelize = require('../config/connection.js');
 
-class Note extends Models {}
+class Note extends Model {}
 
 Note.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      autoIncrement: true
+      autoIncrement: true,
+      primaryKey: true
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     description: {
       type: DataTypes.STRING,
@@ -22,6 +23,7 @@ Note.init(
   },
   {
     sequelize,
+    timestamps: false,
     model: 'Note'
   }
 );
