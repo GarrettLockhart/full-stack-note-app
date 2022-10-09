@@ -5,6 +5,7 @@ const sequelize = require('./config/connection.js');
 const routes = require('./controllers/index.js');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+require ("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const hbs = exphbs.create();
-
 
 // express session config
 const sess = {
@@ -31,6 +31,6 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 });
