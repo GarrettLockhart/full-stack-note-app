@@ -16,12 +16,12 @@ router.get('/', (req, res) => {
 });
 
 // return a specific user by their id
-router.get('/:id', async (req, res) => {
+router.get('/:email', async (req, res) => {
   try {
     const oneUser = await User.findOne({
       attributes: { exclude: 'password' },
       where: {
-        id: req.params.id
+        email: req.params.email
       }
     });
     if (!oneUser) {
