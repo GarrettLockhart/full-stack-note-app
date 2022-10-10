@@ -16,4 +16,18 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const newPostDb = await Post.create(req.body);
+
+    if (!newPostDb) {
+      res.status(400).json({ message: 'Failed to create post' })
+    }
+    res.status(200).json(newPostDb);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+})
+
 module.exports = router;
