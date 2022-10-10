@@ -1,10 +1,19 @@
 <div class="homepage-header">
   <h2 class="homepage-title">Recent Post's</h2>
 </div>
-
+{{#each posts as |posts|}}
 <div class="post-container">
   <section class="post-card">
-    <h3 class="post-title">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-    <p class="post-date">05/23/22</p>
+    <h3 class="post-title">{{posts.title}}</h3>
+    <p class="post-date">{{posts.createdAt}}</p>
   </section>
 </div>
+{{else}}
+<div class="post-container">
+  <section class="post-card">
+    <h3 class="post-title">No posts yet, create one!</h3>
+  </section>
+</div>
+{{/each}}
+
+<script src="/js/homepage.js" ></script>
