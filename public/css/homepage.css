@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   min-height: 75px;
+  margin-top: 20px;
 }
 
 .homepage-title {
@@ -23,7 +24,7 @@
   align-items: start;
   max-width: 1200px;
   padding: 0;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .post-card {
