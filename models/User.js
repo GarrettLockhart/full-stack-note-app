@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-const Post = require('./Post.js');
 const sequelize = require('../config/connection.js');
+const Post = require('./Post.js')
 const bcrypt = require('bcrypt');
 
 class User extends Model {
@@ -42,10 +42,7 @@ User.init(
     },
     user_posts: {
       type: DataTypes.INTEGER,
-      references: {
-        model: Post,
-        key: 'id'
-      }
+      allowNull: true,
     }
   },
   {
